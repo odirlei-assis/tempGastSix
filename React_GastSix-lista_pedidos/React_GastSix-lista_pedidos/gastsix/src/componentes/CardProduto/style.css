@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --branco: #ffffff;
+    --font1: Verdana;
+}
+    
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/*BANNER*/
+
+.banner {
+    background-image: url(../../assets/img/background.png); 
+    /* height: auto;  */
+     height: 944px; 
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div_alinhamento_label{
+    display: flex;
+    flex-direction: column;
+    width: 130%;
+    color: var(--branco); 
+    font-size: 15px;
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    margin-top: 11px;
+    margin-bottom: 10em;
+    height: 35px; 
+}
+
+.cartao__produto{
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.borda__produto{
+    border-bottom: solid 2px white;
+}
+
+
+/*
+    background: rgba(255, 255, 255, 0.11);
+*/

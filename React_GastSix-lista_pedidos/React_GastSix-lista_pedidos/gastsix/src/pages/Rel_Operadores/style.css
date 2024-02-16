@@ -1,0 +1,123 @@
+.banner__relop {
+    background-image: url(../../assets/img/background.png);
+    min-height: 944px;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* SECAO FORMULARIO*/
+
+.section_formulario { 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    width: calc(100% - 350px);
+    width: 50%;
+} 
+.formulario_central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.div_alinhamento_campos {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+    color: var(--branco); 
+} 
+ 
+.div_alinhamento_botao_cadastrar{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding: 50px 0 0 0;
+}
+
+.div_alinhamento_funcao_data{
+    display: flex;
+    justify-content: space-between; 
+    color: var(--branco); 
+    font-size: 20px;
+    width: 100%;
+    font-family: var(--font1);
+}
+
+.div_alinhamento_funcao_data .div_alinhamento_data{
+    display: flex;
+    flex-direction: column;
+    width: 35%;  
+}
+.div_alinhamento_funcao_data .div_alinhamento_data input{
+    background-color: #006384; 
+    color: var(--branco); 
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    margin-top: 11px;
+    margin-bottom: 28px;
+    height: 35px; 
+}
+
+.img_rel_movimentacao{
+     width: 100%;
+}
+.botao_gerar{
+    height: 50px;
+    width: 40%;
+    border-radius: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold; 
+    font-family: var(--font1); 
+}
+
+/*Responsividade*/
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .banner__relop{
+        height: 944px;
+    }
+
+    /* FORMULARIO CENTRAL*/
+
+    .formulario_central{
+        padding: 100px ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+    #formulario__central_of-relop{
+        padding: 100px 0;
+    }
+    .section_formulario{
+        width: 100%;
+    }
+    .div_alinhamento_funcao_data{
+        display: flex;
+        flex-direction: column;
+    }
+    .div_alinhamento_funcao_data .div_alinhamento_funcao {
+        max-width: 477px;
+        width: 100%;
+    }
+    .div_alinhamento_funcao_data .div_alinhamento_data{
+        max-width: 477px;
+        width: 100%;
+    }
+    .div_alinhamento_botao_cadastrar{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .botao_gerar{
+        width: 100%;
+    }
+}

@@ -1,0 +1,202 @@
+.alinhamento_login{
+    background-image: url("../../assets/img/background.png");
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 650px;
+    background-size: cover;
+    justify-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.posicionamento_header {
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_container{
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.big_logo{
+    display: flex;
+    width: 40%;
+    max-width: 300px;
+}
+
+.big_logo img{
+    width: 100%;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  
+    background-size: cover;
+
+}
+
+.box_login {
+    background: rgba(0, 86, 115, 0.09);
+    border: 0.3px solid #C8D5DC;
+    box-shadow: 0px 4px 19px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    color: #C8D5DC;
+    width: 440px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0px 30px 0px;
+}
+
+.box_login button {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0073B0 100%);
+    border: 1px solid #C8D5DC;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: #C8D5DC;
+    width: 40%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_login h2 {
+    text-transform: uppercase;
+
+}
+
+.preenchimentos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    width: 300px;
+}
+
+.usuario label, .senha label{
+    margin-bottom: 15px;
+}
+
+input {
+    border: 1px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 13px #000000);
+    border-radius: 5px;
+    background-color: #002F45;
+    height: 30px;
+    width: 100%;
+}
+
+
+footer {
+    height: 10%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+    
+}
+
+footer a{
+    color: #C8D5DC;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.usuario,
+.senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.div_header_1,
+.div_header_2,
+.div_header_3 {
+    width: 40px;
+    fill: #C8D5DC;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    header {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .div_header_1,
+    .div_header_2,
+    .div_header_3 {
+        width: 30px;
+    }
+
+    .div_header_3 a img {
+        width: 30px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .box_login{
+        width: 85%;
+        height: 420px;
+        border-radius: 10px;
+        align-items: center;
+    }
+
+    .big_logo{
+       display: none;
+    }
+
+    footer a{
+        font-size: 15px
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid #FFF;
+        background: rgba(200, 213, 220, 0.00);
+        box-shadow: 0px 4px 13px 0px #000;
+        width: 100%;
+    }
+
+    .preenchimentos{
+        width: 80%;
+    }
+
+    .login_container{
+        justify-content: center;
+    }
+
+
+
+
+}

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --branco: #ffffff;
+    --font1: Verdana;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header {
+    background: linear-gradient(90.05deg, #000000 24.85%, #006384 64.76%, #002F45 99.45%), #006384;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    font-family: var(--font1);
+    display: flex;
+    justify-content: center;
+}
+
+.botao_nav {
+    display: flex;
+    justify-content: space-between;
+    color: var(--branco);
+    align-items: center;
+    width: 96%;
+}
+
+.logo {
+    width: 5%;
+}
+
+.botao_fechar svg {
+    fill: var(--branco);
+    text-decoration: none;
+    height: 40px;
+}
+
+/*BANNER*/
+
+.banner__lancar {
+    background-image: url(../../assets/img/background.png);
+    height: 944px;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* SECAO FORMULARIO*/
+.section__formulario-lancarpedido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.formulario-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 700px;
+    font-family: var(--font1);
+}
+.div__alinhamento_campos {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+    color: var(--branco);
+}  
+
+.div__alinhamento_campos input {
+        margin-top: 11px;
+        margin-bottom: 28px;
+        background: rgba(255, 255, 255, 0.11);
+        backdrop-filter: blur(4px);
+        border-radius: 5px;
+        width: 100%;
+        height: 35px;
+        color: var(--branco);
+}
+.div__alinhamento_justificativa {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+    color: var(--branco);
+}  
+.div__alinhamento_justificativa input{
+    margin-top: 11px;
+    margin-bottom: 28px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    width: 100%;
+    height: 150px;
+    color: var(--branco);
+
+}
+.botao_lancar{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold; 
+    font-family: var(--font1); 
+}
+
+
+
+/*Respansividade*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    h1 {
+        font-size: 15px;
+    }
+    .botao_fechar svg {
+        height: 15px;
+    }
+     .div__alinhamento_campos{
+        font-size: 15px;
+    }
+    .div__alinhamento_justificativa{
+        font-size: 15px;
+    }
+
+   
+    /* FORMULARIO CENTRAL*/
+
+    .section__formulario-lancarpedido {
+        width: 70%;
+    }
+    .botao_lancar{
+        width: 90px;
+        font-size: 13px;
+        margin-top: 4em;
+    }
+
+}
+

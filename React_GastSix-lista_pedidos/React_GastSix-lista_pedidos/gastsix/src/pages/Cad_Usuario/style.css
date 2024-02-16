@@ -1,0 +1,254 @@
+.banner__usuario{
+    background-image: url(../../assets/img/background.png);
+    min-height: 944px;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* SECAO FORMULARIO*/
+.section__formulario-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 350px);
+    width: 50%;
+}
+.formulario-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 700px;
+    font-family: var(--font1);
+}
+.div__alinhamento_campos {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+    color: var(--branco);
+}
+
+.div__alinhamento_campos input {
+        margin-top: 11px;
+        margin-bottom: 28px;
+        background: rgba(255, 255, 255, 0.11);
+        backdrop-filter: blur(4px);
+        border-radius: 5px;
+        width: 100%;
+        height: 35px;
+        color: var(--branco);
+}
+.div__alinhamento_funcao_data{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    color: var(--branco);
+    font-size: 20px;
+}
+
+.div__alinhamento_funcao_data .div__alinhamento__funcao{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.div__alinhamento_funcao_data .div__alinhamento__funcao select{
+    color: var(--branco);
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    margin-top: 11px;
+    margin-bottom: 28px;
+    height: 35px;
+    font-family: var(--font1);
+}
+.div__alinhamento_funcao_data .div__alinhamento__funcao option{
+    color: #000000;
+    font-size: 15px;
+    font-family: var(--font1);
+}
+
+.div__alinhamento_funcao_data .div__alinhamento__data{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.div__alinhamento_funcao_data .div__alinhamento__data input{
+    background-color: #006384;
+    color: var(--branco);
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    margin-top: 11px;
+    margin-bottom: 28px;
+    height: 35px;
+}
+.botao_cadastrar{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font1);
+}
+
+
+
+/*Respansividade*/
+@media screen and (min-width: 768px) and (max-width:1024px){
+
+    h1 {
+        font-size: 15px;
+    }
+    .banner__usuario{
+        height: 1100px;
+    }
+    .botao_fechar svg {
+        height: 15px;
+    }
+    .div__alinhamento_campos{
+        font-size: 15px;
+    }
+    .div__alinhamento__data{
+        font-size: 15px;
+    }
+    .div__alinhamento__funcao{
+        font-size: 15px;
+    }
+
+   
+    /* INICIO MENU INTERATIVO*/
+    .menu_lateral{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        z-index: 1;
+        left: 50px;
+        top: 90px;
+    }
+    .menu_lateral a {
+        font-size: 10px;
+        padding: 10px;
+    }
+    .menu_lateral a img{
+        width: 80px;
+    }
+    .menu_barras svg{
+        height: 40px;
+    }
+    .menu_lateral img {
+        width: 80px;
+    }
+    .menu_barras{
+        position: absolute;
+        left: 10px;
+        top: 90px;
+        display: initial;
+    }
+    hr {
+        width: 60px;
+        height: 2px;
+        background-color: var(--branco);
+    }
+
+    /*MENU CADASTRO*/
+
+    .menu_lateral_cadastro{
+        font-size: 10px;
+        position: absolute;
+        left: 150px;
+        top: 150px;
+    }
+    .menu_lateral_cadastro a {
+        color: var(--branco);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    /*MENU ESTOQUE*/
+
+    .menu_lateral_estoque{
+        font-size: 10px;
+        position: absolute;
+        left: 150px;
+        top: 185px;
+    }
+    .menu_lateral_estoque a {
+        color: var(--branco);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    /*MENU PEDIDOS*/
+
+    .menu_lateral_pedidos{
+        font-size: 10px;
+        position: absolute;
+        left: 150px;
+        top: 220px;
+    }
+    .menu_lateral_pedidos a {
+        color: var(--branco);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    /*MENU RELATORIOS*/
+
+    .menu_lateral_relatorios {
+        font-size: 10px;
+        position: absolute;
+        left: 150px;
+        top: 250px;
+    }
+    .menu_lateral_relatorios a {
+        color: var(--branco);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 7px;
+        font-size: 10px;
+    }
+    /* FINAL MENU INTERATIVO*/
+*
+    /* FORMULARIO CENTRAL*/
+
+    .section__formulario-usuario {
+        width: 70%;
+    }
+
+    .div__alinhamento_funcao_data {
+        display: flex;
+        flex-direction: column;
+    } 
+
+   .div__alinhamento_funcao_data .div__alinhamento__funcao {
+        max-width: 477px;
+        width: 100%;
+    }
+
+    .div__alinhamento_funcao_data .div__alinhamento__data {
+        max-width: 477px;
+        width: 100%;
+    } 
+
+    .botao_cadastrar{
+        width: 125px;
+        font-size: 13px;
+        margin-top: 4em
+    }
+
+}
