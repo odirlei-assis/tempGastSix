@@ -30,8 +30,8 @@ function Vis_Pedido() {
       )
   }
 
-  function ListarPedidosMock(){
-    [
+  async function CriarPedidos(){
+    var lista = [
       {
         "id_pedido": "061d105d-c6e1-11ee-9c08-b445067b803e",
         "observacoes": "Pedido 1 Observações",
@@ -169,6 +169,8 @@ function Vis_Pedido() {
       }
     ]
 
+    await localStorage.setItem("ListaPedidos",JSON.stringify(lista))
+    await GetPedidos();
   }
 
   // function ListarProdutos() {
@@ -214,10 +216,12 @@ function Vis_Pedido() {
   useEffect(() => {
     //executa uma ação após o componente ser recarregado
     recolherMenu();
-    // ListarPedidos();
+    CriarPedidos();
   }, [])
 
-
+  function GetPedidos() {
+    setListaPedidos(JSON.parse(localStorage.getItem("ListaPedidos")!))  
+  }
 
   return (
     <main className="vis_pedido">

@@ -13,11 +13,21 @@ import CardProduto from "../../componentes/CardProduto";
 
 function Det_Pedido() {
   const [listaProdutos, setListaProdutos] = useState<any>();
+  const [pedido, setPedido] = useState<any>();
   // const [DataFinal, setDataFinal] = useState<string>("");
   // const [porpedidos, setPorPedido] = useState<string>("");
 
   const { idPedido } = useParams();
+  function GetProdutos() {
+    var listaPedidos = JSON.parse(localStorage.getItem("ListaPedidos")!);
 
+    for (let index = 0; index < listaPedidos.length; index++) {
+      const element = listaPedidos[index];
+      if (element.id_pedido == idPedido){
+        setPedido(element) 
+      }
+    }
+  }
 
   function ListarProdutos() {
 
@@ -64,23 +74,27 @@ function Det_Pedido() {
   useEffect(() => {
     //executa uma ação após o componente ser recarregado
     recolherMenu();
-    ListarProdutos();
+    // ListarProdutos();
+    GetProdutos();
   }, [])
 
 
   return (
     <main className="banner">
       <ul>
-        {/* {
-          listaProdutos.map((produto: any, index) => {
+        {
+          pedido == null ? "" :  pedido.itens_pedido.map((item: any, index: any) => {
             return <li key={index}>
               <CardProduto
-                id={produto.id_pedido}
-                quantidade={produto.quantidade_produto}
+                partnumber={item.produto.partnumber}
+                descricao={item.produto.descricao}
+                quantidade_produto={item.quantidade_produto}
+                codigoSAP={item.produto.codigoSAP}
+                separado={item.produto.separado}
               />
             </li>
           })
-        } */}
+        }
       </ul>
     </main>
   )
