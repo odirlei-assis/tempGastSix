@@ -55,6 +55,17 @@ header {
     padding-top: 100px;
 }
 
+.vis_pedido .filtro{
+    display: flex;
+    color: #ff7700;
+    width: 300px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.vis_pedido .filtro > input{
+    width: 30px;
+    margin-right: 10px;
+}
 
 /* SECAO FORMULARIO*/
 

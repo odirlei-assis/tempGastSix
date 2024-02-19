@@ -46,12 +46,37 @@ header {
 .banner {
     background-image: url(../../assets/img/background.png); 
     /* height: auto;  */
-     height: 944px; 
+    height: 944px; 
     background-size: cover;
     justify-content: center;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.id_pedido{
+    color: var(--branco);
+    margin-bottom: 30px;
+    display: block;
+}
+
+.det_pedido_ul{
+    width: 90%;
+    max-width: 450px;
+}
+
+.det_pedido_btn{
+    width: 200px;
+    margin-left: 150px;
+    background-color: #6c6c6c;
+    font-family: var(--font1);
+    font-size: 18px;
+    color: var(--branco);
+    /* border-color: #1f1f1f; */
+    filter: none;
+    cursor: pointer;
+    background-color: #006384!important;
+    height: 40px;
 }
 
 /*Respansividade*/

@@ -51,10 +51,23 @@ h2 {
     margin-bottom: 2em;
     cursor: pointer;
     transition: .25s;
+    color: var(--branco);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .cartao__pedido:hover{
     background: rgba(255, 255, 255, 0.252);
+}
+
+.cartao__pedido > .aguardando{
+    color: #ff7700;
+}
+
+.cartao__pedido > .concluido{
+    color: #44b000;
 }
 
 .borda__pedido{

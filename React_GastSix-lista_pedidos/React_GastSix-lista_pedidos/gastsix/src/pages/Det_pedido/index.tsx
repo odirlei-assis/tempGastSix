@@ -6,42 +6,66 @@ import api from "../../utils/api";
 //Hook
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 //Componentes
 import CardProduto from "../../componentes/CardProduto";
 
 function Det_Pedido() {
+  const navigate = useNavigate();
+  const { idPedido } = useParams();
   const [listaProdutos, setListaProdutos] = useState<any>();
   const [pedido, setPedido] = useState<any>();
+
   // const [DataFinal, setDataFinal] = useState<string>("");
   // const [porpedidos, setPorPedido] = useState<string>("");
 
-  const { idPedido } = useParams();
-  function GetProdutos() {
+  function PegarProdutos() {
     var listaPedidos = JSON.parse(localStorage.getItem("ListaPedidos")!);
 
     for (let index = 0; index < listaPedidos.length; index++) {
       const element = listaPedidos[index];
-      if (element.id_pedido == idPedido){
-        setPedido(element) 
+      if (element.id_pedido == idPedido) {
+        setPedido(element)
       }
     }
   }
 
-  function ListarProdutos() {
+  async function ConcluirPedido() {
+    var listaPedidos = JSON.parse(localStorage.getItem("ListaPedidos")!);
 
-    //consumo api - lista pedidoproduto
-    // api.get("pedido/" + idPedido)
-    api.get("pedido/" + idPedido)
-      .then((response) => {
-        setListaProdutos(response.data.pedidoProduto)
-        console.log("Pedido");
-        console.log(response.data)
-      })
-      .catch((error) => console.log(error)
-      )
+    for (let index = 0; index < listaPedidos.length; index++) {
+      const pedido = listaPedidos[index];
+      if (pedido.id_pedido == idPedido) {
+        setPedido(pedido)
+
+        const todosSeparados = pedido.itens_pedido.every((item: any) => item.separado);
+        
+        if (todosSeparados) {
+          pedido.concluido = true
+          await localStorage.setItem("ListaPedidos", JSON.stringify(listaPedidos));
+
+          alert("Pedido concluído.");
+          navigate("/visualizarPedido");
+        }else{
+          alert("O pedido não pode ser concluído. Nem todos os itens foram separados.");
+        }
+        break;
+      }
+    }
   }
+
+  // function ListarProdutos() {
+
+  //   api.get("pedido/" + idPedido)
+  //     .then((response) => {
+  //       setListaProdutos(response.data.pedidoProduto)
+  //       console.log("Pedido");
+  //       console.log(response.data)
+  //     })
+  //     .catch((error) => console.log(error)
+  //     )
+  // }
 
   function recolherMenu() {
 
@@ -75,27 +99,31 @@ function Det_Pedido() {
     //executa uma ação após o componente ser recarregado
     recolherMenu();
     // ListarProdutos();
-    GetProdutos();
+    PegarProdutos();
   }, [])
 
 
   return (
     <main className="banner">
-      <ul>
+      <div>
+        <span className="id_pedido">Id pedido: {idPedido}</span>
+      </div>
+      <ul className="det_pedido_ul">
         {
-          pedido == null ? "" :  pedido.itens_pedido.map((item: any, index: any) => {
+          pedido == null ? "" : pedido.itens_pedido.map((item: any, index: any) => {
             return <li key={index}>
               <CardProduto
-                partnumber={item.produto.partnumber}
-                descricao={item.produto.descricao}
-                quantidade_produto={item.quantidade_produto}
-                codigoSAP={item.produto.codigoSAP}
-                separado={item.produto.separado}
+                item={item}
+              // descricao={item.produto.descricao}
+              // quantidade_produto={item.quantidade_produto}
+              // codigoSAP={item.produto.codigoSAP}
+              // separado={item.produto.separado}
               />
             </li>
           })
         }
       </ul>
+      <input onClick={() => ConcluirPedido()} id="botao_concluir" className="det_pedido_btn" type="button" value="Concluir" />
     </main>
   )
 }
